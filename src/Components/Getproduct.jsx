@@ -36,7 +36,7 @@ const Getproduct = () => {
                 {product.map(singleproduct => (
                     <div className="col-md-4 card shadow   mb-3">
                         {/* card body goes here  */}
-                        <div className="card-body">
+                        <div className="card-body bg-dark">
                             {/* product name goes here  */}
                             <h1 className='text-primary'>{singleproduct.product_name}</h1>
                             {/* image goes here  */}
