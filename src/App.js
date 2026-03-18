@@ -6,6 +6,7 @@ import Signup from './Components/Signup';
 import Signin from './Components/Signin';
 import Addproduct from './Components/Addproduct';
 import Getproduct from './Components/Getproduct';
+import Makepayment from './Components/Makepayment';
 function App() {
   return (
     <BrowserRouter>
@@ -19,12 +20,15 @@ function App() {
           <Link to="/addproduct" className='btn btn-success m-2'>Add product</Link>
           <Link to="/" className=' btn btn-primary m-2'>Get product</Link>
 
+
         </nav>
         <Routes>
           <Route path='/' element={<Getproduct />} />
           <Route path='/Signup' element={<Signup />} />
           <Route path='/Signin' element={<Signin />} />
           <Route path='/addproduct' element={<Addproduct />} />
+          <Route path='/makepayment' element={<Makepayment />} />
+
 
 
         </Routes>
