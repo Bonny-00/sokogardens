@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Oi&display=swap');
+
+
+
+body {
+
+  /* change background  */
+background-image: url(../public/images/slide4.jpg);
+.full-height{
+min-height: 100vh;
+padding: 50px;
+}
+  .oi-regular {
+    font-family: "Oi", serif !important;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+
+
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
