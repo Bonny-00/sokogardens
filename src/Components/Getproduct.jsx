@@ -36,7 +36,7 @@ const Getproduct = () => {
             <div className="row">
                 {/* carousel goes here  */}
                 <Carousel />
-                <h1 className='text-success  oi-regular'>Available products🍟</h1>
+                <h1 className='text-success  oi-regular'>Available products</h1>
                 {/* bind the states  */}
                 <i className='text-primary'>{loading}</i>
                 <i className='text-danger'>{error}</i>

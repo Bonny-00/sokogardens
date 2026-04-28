@@ -36,7 +36,7 @@ const Addproduct = () => {
     return (
         <div className=' row  justify-content-center mt-3'>
             <div className="col-md-9 card shadow p-2 bg-dark">
-                <h1 className='text-danger oi-regular'>Add products🍔</h1>
+                <h1 className='text-danger oi-regular'>Add products</h1>
                 {/* bind the states  */}
                 <i className="text-primary">{loading}</i>
                 <i className="text-success">{success}</i>
@@ -44,7 +44,7 @@ const Addproduct = () => {
 
 
                 <form action="" onSubmit={handlesubmit}>
-                    <input type="text" placeholder='🍨Enter product name  ' className='form-control rancho-regular' onChange={(e) => setProduct_Name(e.target.value)} /><br /><br />
+                    <input type="text" placeholder='Enter product name  ' className='form-control rancho-regular' onChange={(e) => setProduct_Name(e.target.value)} /><br /><br />
                     <textarea name="" id="" className='form-control rancho-regular' placeholder='💬Enter product desctription' onChange={(e) => setProduct_Description(e.target.value)}></textarea><br /><br />
                     <input type="number" placeholder='💸Enter product cost' className='form-control rancho-regular' onChange={(e) => setProduct_Cost(e.target.value)} /><br /><br />
                     <input type="file" accept='image/*' className='form-control  rancho-regular' onChange={(e) => setProduct_Photo(e.target.files[0])} /><br /><br />

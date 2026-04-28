@@ -10,7 +10,7 @@ const Carousel = () => {
                     <div class="carousel-inner">
                         {/* <!-- division with image one  --> */}
                         <div class="carousel-item">
-                            <img src="images/download (1).jpeg" alt="" style={{ height: "350px", width: "1200px", objectFit: "cover" }} />
+                            <img src="images/download (6).jpeg" alt="" style={{ height: "350px", width: "1200px", objectFit: "cover" }} />
                         </div>
                         {/* <!-- division with image two  --> */}
                         <div class="carousel-item ">
@@ -18,11 +18,11 @@ const Carousel = () => {
                         </div>
                         {/* <!-- division with image three  --> */}
                         <div class="carousel-item active">
-                            <img src="images/download.jpeg" alt="" style={{ height: "350px", width: "1200px", objectFit: "cover" }} />
+                            <img src="images/download (4).jpeg" alt="" style={{ height: "350px", width: "1200px", objectFit: "cover" }} />
                         </div>
                         {/* <!-- a division with image four  --> */}
                         <div class="carousel-item">
-                            <img src="images/images.jpeg" alt="" style={{ height: "350px", width: "1200px", objectFit: "cover" }} />
+                            <img src="images/download (7).jpeg" alt="" style={{ height: "350px", width: "1200px", objectFit: "cover" }} />
                         </div>
                     </div>
                     {/* <!-- previous control  --> */}
