@@ -10,19 +10,19 @@ const Carousel = () => {
                     <div class="carousel-inner">
                         {/* <!-- division with image one  --> */}
                         <div class="carousel-item">
-                            <img src="images/download (6).jpeg" alt="" style={{ height: "350px", width: "1200px", objectFit: "cover" }} />
+                            <img src="images/ChatGPT Image May 6, 2026, 03_45_49 PM.png" alt="" style={{ height: "500px", width: "1500px", objectFit: "cover" }} />
                         </div>
                         {/* <!-- division with image two  --> */}
                         <div class="carousel-item ">
-                            <img src="images/download (8).jpeg" alt="" style={{ height: "350px", width: "1200px", objectFit: "cover" }} />
+                            <img src="images/ChatGPT Image May 6, 2026, 03_49_08 PM.png" alt="" style={{ height: "500px", width: "1500px", objectFit: "cover" }} />
                         </div>
                         {/* <!-- division with image three  --> */}
                         <div class="carousel-item active">
-                            <img src="images/download (4).jpeg" alt="" style={{ height: "350px", width: "1200px", objectFit: "cover" }} />
+                            <img src="images/ChatGPT Image May 6, 2026, 03_56_26 PM.png" alt="" style={{ height: "500px", width: "1500px", objectFit: "cover" }} />
                         </div>
                         {/* <!-- a division with image four  --> */}
                         <div class="carousel-item">
-                            <img src="images/download (7).jpeg" alt="" style={{ height: "350px", width: "1200px", objectFit: "cover" }} />
+                            <img src="images/ChatGPT Image May 6, 2026, 03_50_44 PM.png" alt="" style={{ height: "500px", width: "1500px", objectFit: "cover" }} />
                         </div>
                     </div>
                     {/* <!-- previous control  --> */}

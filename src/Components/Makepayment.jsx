@@ -49,7 +49,9 @@ const Makepayment = () => {
 
                 <form action="" onSubmit={handlesubmit}>
                     <input type="number" className="form-control text-dark rancho-regular" placeholder='📞Enter phone 254....................' onChange={(e) => setPhone(e.target.value)} /><br />
-                    <button className="btn btn-success w-100 oi-regular" type='Submit'>💳💰Make Payment</button>
+                    <button type="submit" className="btn btn-outline-success w-100 oi-regular">💰Make payment</button>
+                
+                    
                 </form>
 
             </div>

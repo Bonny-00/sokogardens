@@ -48,7 +48,7 @@ const Addproduct = () => {
                     <textarea name="" id="" className='form-control rancho-regular' placeholder='💬Enter product desctription' onChange={(e) => setProduct_Description(e.target.value)}></textarea><br /><br />
                     <input type="number" placeholder='💸Enter product cost' className='form-control rancho-regular' onChange={(e) => setProduct_Cost(e.target.value)} /><br /><br />
                     <input type="file" accept='image/*' className='form-control  rancho-regular' onChange={(e) => setProduct_Photo(e.target.files[0])} /><br /><br />
-                    <button type='Submit' className='btn btn-warning w-100 oi-regular'> Add product</button>
+                    <button type='Submit' className='btn btn-outline-warning w-100 oi-regular'> Add product</button>
                 </form>
             </div>
 

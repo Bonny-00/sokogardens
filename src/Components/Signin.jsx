@@ -10,6 +10,8 @@ const Signin = () => {
     const [loading, setLoading] = useState("")
     const [success, setSuccess] = useState("")
     const [error, setError] = useState("")
+        const [strength, setStrength] = useState("");
+    
     // function to handle submit 
     const handlesubmit = async (e) => {
         e.preventDefault()
@@ -28,6 +30,20 @@ const Signin = () => {
             setError (error.message)
             setLoading ("");
 
+        
+
+
+        }     }
+
+    const checkpasswordStrength = (password) => {
+        if (password.length < 4) {
+            setStrength("Weak");
+        }
+        else if (password.length < 8) {
+            setStrength("Medium")
+        }
+        else {
+            setStrength("Strong")
         }
     }
 
@@ -41,8 +57,24 @@ const Signin = () => {
                 <i className="text-danger">{error}</i>
                 <form action="" onSubmit={handlesubmit}>
                     <input type="email" placeholder='📧Email' className=' form-control rancho-regular' onChange={(e) => setEmail(e.target.value)} /><br /><br />
-                    <input type="password" placeholder='🔐Password' className='form-control rancho-regular' onChange={(e) => setPassword(e.target.value)} /><br />
-                    <button type='Submit' className='btn btn-warning text-white  w-100 oi-regular'>Sign in</button>
+                    <input type="password" placeholder='🔐Password' className='form-control rancho-regular' onChange={(e) =>{ setPassword(e.target.value)
+                        checkpasswordStrength(e.target.value)}} /><br />
+                         {password && (
+                            <p
+                                style={{
+                                    color:
+                                        strength === "Weak"
+                                            ? "red"
+                                            : strength === "Medium"
+                                                ? "orange"
+                                                : "green",
+                                }}
+                            >
+                                Password strength: {strength}
+                            </p>
+                        )}
+                       git 
+                    <button type='Submit' className='btn btn-outline-warning text-white  w-100 oi-regular'>Sign in</button>
                     <p className='rancho-regular text-white'>Don't have an account?  <Link to="/Signup" >Sign up</Link></p>
                 </form>
 

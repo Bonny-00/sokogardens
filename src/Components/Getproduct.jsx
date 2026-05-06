@@ -8,6 +8,22 @@ const Getproduct = () => {
     const [loading, setLoading] = useState("")
     const [product, setproducts] = useState([])
     const [error, setError] = useState("")
+    const [visiblecount, setVisiblecount] = useState(8)
+    const [search, setSearch] = useState("")
+    const [filteredproducts, setFilteredproducts] = useState([])
+
+
+
+    // function to filter products 
+    useEffect(() => {
+        filterproducts()
+    }, [search])
+    const filterproducts = () => {
+        const filtered = product.filter(singleproduct => singleproduct.product_name.toLowerCase().includes(search.toLowerCase()))
+        setFilteredproducts(filtered)
+
+
+    }
     // function to get product 
     const getproduct = async () => {
         setLoading("Please wait...")
@@ -18,10 +34,10 @@ const Getproduct = () => {
             setLoading("")
         }
         catch (error) {
-            setError (error.message)
-            setLoading ("");
+            setError(error.message)
+            setLoading("");
 
-         }
+        }
     }
     // call our function
     useEffect(() => {
@@ -37,11 +53,20 @@ const Getproduct = () => {
                 {/* carousel goes here  */}
                 <Carousel />
                 <h1 className='text-success  oi-regular'>Available products</h1>
+                <div className=" row justify-content center mt-3 mb-3">
+                    <input
+                     type="search" 
+                    placeholder="Search products..."
+                     className="form-control w-50" 
+                    value={search} 
+                    onChange={(e) => setSearch(e.target.value)} />
+                </div>
                 {/* bind the states  */}
                 <i className='text-primary'>{loading}</i>
                 <i className='text-danger'>{error}</i>
+                {filteredproducts.slice(0, visiblecount).map((singleproduct) => (
 
-                {product.map(singleproduct => (
+
                     <div className="col-md-4    mb-3">
                         <div className='card shadow h-100'>
                             {/* card body goes here  */}
@@ -55,11 +80,22 @@ const Getproduct = () => {
                                 {/* product cost goes here  */}
                                 <b className='text-warning'>{singleproduct.product_cost}</b><br />
                                 {/* purchase now button  */}
-                                <button className='btn btn-danger w-100 oi-regular ' onClick={() => navigate("/makepayment", { state: { singleproduct } })}>Purchase now</button>
+                            <button className="btn btn-outline-danger w-100 oi-regular" onClick={() => navigate("/makepayment", { state: { singleproduct } })}>purchase now</button>
+                               
                             </div>
                         </div>
                     </div>
                 ))}
+                <div className='text-center mt-3'>
+                    {visiblecount < filteredproducts.length && (
+                        <button
+                            className='btn btn-primary'
+                            onClick={() => setVisiblecount(visiblecount + 8)}
+                        >
+                            load More
+                        </button>
+                    )}
+                </div>
             </div>
         </div>
     )
