@@ -11,6 +11,8 @@ const Getproduct = () => {
     const [visiblecount, setVisiblecount] = useState(8)
     const [search, setSearch] = useState("")
     const [filteredproducts, setFilteredproducts] = useState([])
+    const[sortoption,setSortoption]=useState("")
+    
 
 
 
@@ -21,13 +23,14 @@ const Getproduct = () => {
     const filterproducts = () => {
         const filtered = product.filter(singleproduct => singleproduct.product_name.toLowerCase().includes(search.toLowerCase()))
         setFilteredproducts(filtered)
-
+        
 
     }
     // function to get product 
     const getproduct = async () => {
         setLoading("Please wait...")
 
+        setFilteredproducts(sorted_products);
         try {
             const response = await axios.get("http://bonifacekifaru.alwaysdata.net/api/getproducts")
             setproducts(response.data)
@@ -46,6 +49,24 @@ const Getproduct = () => {
     console.log(product);
     const imagepath = "http://bonifacekifaru.alwaysdata.net/static/images/"
 
+    const sorted_products =[...filteredproducts].sort((a, b) => {
+            if (sortoption === "price_low_high") {
+                return a.product_cost - b.product_cost; 
+            }
+            if (sortoption === "price_high_low") {
+                return b.product_cost - a.product_cost; 
+            }
+            if (sortoption === "name_ascending") {
+                return a.product_name.localeCompare(b.product_name);
+            }
+            if (sortoption === "name_descending") {
+                return b.product_name.localeCompare(a.product_name);
+            }
+            return 0; 
+        });
+        
+        
+
 
     return (
         <div className="container-fluid">
@@ -61,10 +82,21 @@ const Getproduct = () => {
                     value={search} 
                     onChange={(e) => setSearch(e.target.value)} />
                 </div>
+                    <div className="col-md-3 mb-2 mt-4 row justify-content-right align-items-right">
+                        <select className="form-select" value={sortoption} onChange={(e) => setSortoption(e.target.value)}>
+                            <option value="">Sort By</option>
+                            <option value="price_low_high">Price: Low - High</option>
+                            <option value="price_high_low">Price: High - Low</option>
+                            <option value="name_ascending">Name: A - Z</option>
+                            <option value="name_descending">Name: Z - A</option>
+                        </select>
+                    </div>
+
                 {/* bind the states  */}
                 <i className='text-primary'>{loading}</i>
                 <i className='text-danger'>{error}</i>
-                {filteredproducts.slice(0, visiblecount).map((singleproduct) => (
+            
+                {sorted_products.slice(0, visiblecount).map((singleproduct) => (
 
 
                     <div className="col-md-4    mb-3">

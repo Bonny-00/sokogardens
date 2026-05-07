@@ -61,9 +61,7 @@ const Navbar = () => {
                   <a href="/signup" className="btn btn-outline-warning text-primary">
                     Signup
                   </a>
-                  
-                  
-                  <br /><br />
+            
 
                   <a href="/signin" className="btn btn-outline-danger text-primary me-2">
                     Signin

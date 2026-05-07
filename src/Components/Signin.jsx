@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Signin = () => {
     // declare our states here 
@@ -11,6 +11,7 @@ const Signin = () => {
     const [success, setSuccess] = useState("")
     const [error, setError] = useState("")
         const [strength, setStrength] = useState("");
+        const navigate =useNavigate()
     
     // function to handle submit 
     const handlesubmit = async (e) => {
@@ -25,6 +26,10 @@ const Signin = () => {
             const response = await axios.post("http://bonifacekifaru.alwaysdata.net/api/signin", formdata)
             setSuccess(response.data.message)
             setLoading("")
+            if (response.data.user){
+                localStorage.setItem("user", JSON.stringify(response.data.user))
+                navigate ("")
+            }
         }
         catch (error) { 
             setError (error.message)

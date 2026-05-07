@@ -16,15 +16,19 @@ import Navbar from './Components/Navbar';
 function App() {
   return (
     <BrowserRouter>
-    <div className="App">
-      {/* navbar goes here  */}
+      <div className="App">
+        {/* navbar goes here  */}
 
-      <Navbar/>
-    
-      
+        <Navbar />
+
+
         <header className="App-header">
+
           <h1 className='oi-regular text-white'>OUTFITS MANAGEMENT & ACCESSORIES</h1>
+
         </header>
+        <marquee className="text-dark bold font-weight-bold font-italic btn btn-danger">WELCOME ALL   TO OUR PLATFORM </marquee>
+
         <Routes>
           <Route path='/' element={<Getproduct />} />
           <Route path='/Signup' element={<Signup />} />
